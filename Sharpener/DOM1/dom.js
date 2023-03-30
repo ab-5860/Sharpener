@@ -45,3 +45,9 @@ for(var i =0; i<items.length;i++)
 {
     items[i].style.background = '#f4f4f4';
 }
+
+items[2].style.background = 'green';
+for(var i = 0;i<items.length;i++)
+{
+    items[i].style.fontWeight = 'bold';
+}
