@@ -54,15 +54,57 @@
 
 // GET ELEMENT BY TAG NAME
 
-var li = document.getElementsByTagName('li');
-console.log(li);
-console.log(li[1]);
+// var li = document.getElementsByTagName('li');
+// console.log(li);
+// console.log(li[1]);
 
-li[1].textContent =   'Hello 2';
-li[1].style.fontWeight = 'bold';
-li[1].style.background = 'yellow';
+// li[1].textContent =   'Hello 2';
+// li[1].style.fontWeight = 'bold';
+// li[1].style.background = 'yellow';
 
-for(var i=0; i <li.length;i++)
+// for(var i=0; i <li.length;i++)
+// {
+//     li[i].style.background = '#f4f4f4';
+// }
+
+
+// QUERY SELECTOR - you can use any css selector like any JQuery
+
+// var header = document.querySelector('#main-header')  // # -> Id
+// header.style.borderBottom = 'solid 4px #ccc';
+
+// var input = document.querySelector('input');
+// input.value = 'Hello World ';
+
+// var submit = document.querySelector('input[type="submit"]');
+// submit.value = "SEND";
+
+
+// var item = document.querySelector('.list-group-item');  // . -> class
+// item.style.color = 'red';
+
+// var lastItem = document.querySelector('.list-group-item:last-child');
+// lastItem.style.color = 'blue';
+
+// var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.color = 'green';
+
+// var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+// thirdItem.style.visibility = 'hidden';
+
+// QUERY SELECTOR ALL
+
+var titles = document.querySelectorAll('.title');
+console.log(titles);
+titles[0].textContent = 'Hello';
+
+var items = document.querySelectorAll('.list-group-item');
+console.log(items);
+items[1].style.color = 'green';
+
+var odd = document.querySelectorAll('li:nth-child(odd)');
+
+for(var i=0;i<odd.length;i++)
 {
-    li[i].style.background = '#f4f4f4';
+    odd[i].style.background = 'green';
 }
