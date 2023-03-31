@@ -94,17 +94,126 @@
 
 // QUERY SELECTOR ALL
 
-var titles = document.querySelectorAll('.title');
-console.log(titles);
-titles[0].textContent = 'Hello';
+// var titles = document.querySelectorAll('.title');
+// console.log(titles);
+// titles[0].textContent = 'Hello';
 
-var items = document.querySelectorAll('.list-group-item');
-console.log(items);
-items[1].style.color = 'green';
+// var items = document.querySelectorAll('.list-group-item');
+// console.log(items);
+// items[1].style.color = 'green';
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
+// var odd = document.querySelectorAll('li:nth-child(odd)');
 
-for(var i=0;i<odd.length;i++)
-{
-    odd[i].style.background = 'green';
-}
+// for(var i=0;i<odd.length;i++)
+// {
+//     odd[i].style.background = 'green';
+// }
+
+
+// // TRAVERSING THE DOM
+
+// var itemList = document.querySelector("#items");
+
+// // parentNode
+
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.background = '#f4f4f4';
+// console.log(itemList.parentNode.parentNode);
+
+// // parentElement
+
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.background = '#f4f4f4';
+// console.log(itemList.parentElement.parentNode);
+
+// // childeNode [no use]
+// console.log(itemList.childNodes);
+
+// console.log(itemList.children);
+// console.log(itemList.children[2]);
+
+// itemList.children[2].style.background = 'yellow';
+
+
+// // FirstChild [ NO USE]
+// console.log(itemList.firstChild);
+
+// // first element child
+
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = "Hello 1";
+
+
+// // LastChild [ NO USE]
+// console.log(itemList.lastChild);
+
+// // last element child
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = "Hello 4";
+
+// // nextSibling
+// console.log(itemList.nextSibling);
+
+// // nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+
+// // previousSibling
+
+// console.log(itemList.previousSibling);
+
+// // previousElementSibling
+
+// console.log(itemList.previousElementSibling);
+
+// itemList.previousElementSibling.style.color = 'green'
+
+// // create element
+
+// // create a div
+// var newDiv = document.createElement('div');
+
+// // Add a class
+// newDiv.className = 'hello';
+
+// // Add id
+// newDiv.id = 'hello1'
+
+// // Add attribute
+// newDiv.setAttribute('title', 'Hello Div')
+
+// // create text node
+
+// var newDivText = document.createTextNode('Hello World');
+
+// // Add text to div
+// newDiv.appendChild(newDivText);
+
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
+
+
+// console.log(newDiv);
+
+// newDiv.style.fontSize = '30px';
+// container.insertBefore(newDiv, h1);
+
+
+// Adding "Hello World" before Item Lister
+
+var ItemLister = document.querySelector("#header-title")
+
+var helloItem = document.createElement('h2');
+
+helloItem.textContent = 'HEllo';
+
+ItemLister.parentNode.insertBefore(helloItem,ItemLister);
+
+//add HEllo word before Item 1
+var firstItem = document.querySelector("#items")
+console.log(firstItem)
+
+var helloItem1 = document.createElement('li');
+helloItem1.innerHTML = '<li>HEllo</li>'
+
+firstItem.insertBefore(helloItem1, firstItem);
