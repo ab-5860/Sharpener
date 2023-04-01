@@ -193,7 +193,7 @@
 // var h1 = document.querySelector('header h1');
 
 
-console.log(newDiv);
+// console.log(newDiv);
 
 // newDiv.style.fontSize = '30px';
 // container.insertBefore(newDiv, h1);
@@ -214,6 +214,7 @@ var firstItem = document.querySelector("#items")
 console.log(firstItem)
 
 var helloItem1 = document.createElement('li');
+helloItem1.className = 'list-group-item';
 helloItem1.innerHTML = '<li>HEllo</li>'
 
 firstItem.insertBefore(helloItem1, firstItem);
