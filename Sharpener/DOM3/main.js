@@ -36,18 +36,23 @@ function onSubmit(e)
         
         userList.appendChild(li);
 
+        // Retrieve existing user data from local storage
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
         // create an object to store data
-        const formData = {
+        let formData = {
         name: nameInput.value,
         email: emailInput.value,
         };
+
+        users.push(formData);
         
         // Clear fields 
         nameInput.value = '';
         emailInput.value = '';
 
         // store object in local storage 
-        localStorage.setItem('formData', JSON.stringify(formData))
+        localStorage.setItem('users', JSON.stringify(users))
     } 
 
 }
