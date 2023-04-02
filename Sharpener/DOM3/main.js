@@ -22,6 +22,7 @@ const userList = document.querySelector('#users');
 // Delete event 
 userList.addEventListener('click',removeItem);
 
+
 myForm.addEventListener('submit', onSubmit);
 
 function onSubmit(e)
@@ -68,9 +69,20 @@ function onSubmit(e)
         deleteBtn.className = 'btn btn-danger btn-sm float-right delete '
 
         // Append text node
-        deleteBtn.appendChild(document.createTextNode('x'));
+        deleteBtn.appendChild(document.createTextNode('Delete'));
 
         li.appendChild(deleteBtn);
+
+        // create del button element
+        var editBtn  = document.createElement('button');
+
+        // Add classes to del button 
+        editBtn.className = 'btn btn-danger btn-sm float-right edit ml-1'
+
+        // Append text node
+        editBtn.appendChild(document.createTextNode('Edit'));
+
+        li.appendChild(editBtn);
 
         // Append li to list
         userList.appendChild(li);
@@ -99,7 +111,9 @@ function removeItem(e)
 
             console.log(users);
             users = users.filter(user => {
-                return user.name != userName 
+                return user.name != userName &&
+                        user.email != userEmail &&
+                        user.phone != userPhone
             });
 
             console.log(users);
@@ -107,6 +121,32 @@ function removeItem(e)
             localStorage.setItem("users", JSON.stringify(users));
 
         }
+    }
+
+    if(e.target.classList.contains('edit'))
+    {
+            var li = e.target.parentElement;
+            userList.removeChild(li);
+            
+            console.log(li);
+
+            // Get the user data from the li element's text
+            const [userName, userEmail, userPhone] = li.textContent.split(" : ");
+
+            // Remove the user from localStorage using their data as the filter
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            console.log(users);
+            users = users.filter(user => {
+                return user.name != userName &&
+                user.email != userEmail &&
+                user.phone != userPhone
+            });
+
+            console.log(users);
+
+            localStorage.setItem("users", JSON.stringify(users));
+      
     }
 
 }
